@@ -9,7 +9,8 @@ import { VehicleService } from './../../services/vehicle.service';
 export class VehicleFormComponent implements OnInit {
   makes: any[];
   vehicle : any = {
-    features : []
+    features: [],
+    contact: {}
   };
   models: any[];
   features: any[];
