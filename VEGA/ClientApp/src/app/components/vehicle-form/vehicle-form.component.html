@@ -1,0 +1,51 @@
+<h1>New Vehicle</h1>
+<h1> {{ vehicle | json }} </h1>
+<form (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="make">Make</label>
+    <select id="make" class="form-control" (change)="onMakeChange()" [(ngModel)]="vehicle.makeId" name="makeId">
+      <option value=""></option>
+      <option *ngFor="let m of makes" value="{{ m.id }}">{{ m.name }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="model">Model</label>
+    <select id="model" class="form-control" [(ngModel)]="vehicle.modelId" name="modelId">
+      <option value=""></option>
+      <option *ngFor="let m of models" value="{{ m.id }}">{{ m.name }}</option>
+    </select>
+  </div>
+
+  <label for="registered" class="radio-inline">
+    <input type="radio" name="isRegistered" id="registered" value="true" [(ngModel)]="vehicle.isRegistered" />Yes
+  </label>
+  <label for="notRegistered" class="radio-inline">
+    <input type="radio" name="isRegistered" id="notRegistered" value="false" [(ngModel)]="vehicle.isRegistered" />No
+  </label>
+
+  <div class="form-group">
+    <div *ngFor="let f of features" class="checkbox">
+      <label for="{{ f.id }}">
+        <input value="{{ f.id }}" type="checkbox" id="{{ f.id }}" (change)="onFeatureToggle(f.id, $event)" />
+        {{ f.name }}
+      </label>
+    </div>
+  </div>
+
+  <h2>Contact</h2>
+  <div class="form-group">
+    <label for="contactName">Name</label>
+    <input id="contactName" type="text" class="form-control" [(ngModel)]="vehicle.contact.name" name="contactName" />
+  </div>
+  <div class="form-group">
+    <label for="contactPhone">Phone</label>
+    <input id="contactPhone" type="text" class="form-control" [(ngModel)]="vehicle.contact.phone" name="contactPhone" />
+  </div>
+  <div class="form-group">
+    <label for="contactEmail">Email</label>
+    <input id="contactEmail" type="text" class="form-control" [(ngModel)]="vehicle.contact.email" name="contactEmail" />
+  </div>
+</form>
+
+
+<input />
