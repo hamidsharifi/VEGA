@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { ToastyModule } from 'ng2-toasty';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
@@ -13,7 +14,8 @@ import { FetchDataComponent } from './components/fetch-data/fetch-data.component
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
 import { VehicleService as VehicleService } from "./services/vehicle.service";
 
-@NgModule({
+@
+NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
@@ -27,6 +29,7 @@ import { VehicleService as VehicleService } from "./services/vehicle.service";
     HttpClientModule,
     HttpModule,
     FormsModule,
+    ToastyModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
